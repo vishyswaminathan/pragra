@@ -32,7 +32,7 @@ spec:
             
       volumes:
         - name: vpro-db-data
-          persitentVolumeClaim : 
+          persistentVolumeClaim : 
             claimName: db-pv-claim
 
     
