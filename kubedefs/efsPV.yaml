@@ -4,7 +4,7 @@ metadata:
   name: efs-pv
 spec:
   capacity:
-    storage: 5Gi  # EFS is scalable, so this is a placeholder
+    storage: 5Gi  # EFS is scalable, so this is a placeholder ####
   volumeMode: Filesystem
   accessModes:
     - ReadWriteMany  # Allows multiple pods to access
