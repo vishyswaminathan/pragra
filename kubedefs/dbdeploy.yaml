@@ -33,7 +33,16 @@ spec:
       volumes:
         - name: vpro-db-data
           persistentVolumeClaim : 
-            claimName: db-pv-claim
+            claimName: db-pv-claim 
+
+      initContainers:
+        - name: busybox
+          image: busy:latest
+          args: ["rm", "-rf", "/var/lib/mysql/lost+found "]
+          volumeMounts:
+            - name: vpro-db-data
+              mountPath: /var/lib/mysql
+
 
     
 

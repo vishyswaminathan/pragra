@@ -7,8 +7,8 @@ metadata:
 spec:
   resources:
     requests:
-      storage: 5Gi
+      storage: 3Gi
   volumeMode: Filesystem
-  storageClassName: efs-sc
+  storageClassName: default
   accessModes:
     - ReadWriteOnce
