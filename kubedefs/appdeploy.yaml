@@ -20,7 +20,7 @@ spec:
         ports:
         -  name: vproapp-port
            containerPort: 8080
-
+#### testing a minor change to see if argo CD workds ####
       initContainers:
       - name: init-mydb
         image: busybox:1.28
