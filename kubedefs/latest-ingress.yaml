@@ -1,0 +1,31 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"networking.k8s.io/v1","kind":"Ingress","metadata":{"annotations":{"nginx.ingress.kubernetes.io/rewrite-target":"/"},"creationTimestamp":"2025-04-02T19:12:27Z","generation":1,"labels":{"app.kubernetes.io/instance":"vprofile-argo"},"name":"vpro-ingress","namespace":"default","resourceVersion":"2670","uid":"aacffcb3-16a9-4f14-ad1f-7a28861d37ea"},"spec":{"ingressClassName":"nginx","rules":[{"http":{"paths":[{"backend":{"service":{"name":"vproapp-service","port":{"number":8080}}},"path":"/","pathType":"Prefix"}]}}]},"status":{"loadBalancer":{"ingress":[{"hostname":"a314aa300cc4f4d1c9648a0b173998be-00d75a148540a6c0.elb.us-east-1.amazonaws.com"}]}}}
+    nginx.ingress.kubernetes.io/rewrite-target: /
+  creationTimestamp: "2025-04-04T18:22:56Z"
+  generation: 1
+  labels:
+    app.kubernetes.io/instance: vprofile-argo
+  name: vpro-ingress
+  namespace: default
+  resourceVersion: "72872"
+  uid: 65a1aba4-9634-4384-99fb-7b839f4e99f5
+spec:
+  ingressClassName: nginx
+  rules:
+  - http:
+      paths:
+      - backend:
+          service:
+            name: vproapp-service
+            port:
+              number: 8080
+        path: /
+        pathType: Prefix
+status:
+  loadBalancer:
+    ingress:
+    - hostname: aa7e9b450ff36466aae1d1714d96be19-7c71c4f14cfc6b01.elb.us-east-1.amazonaws.com
