@@ -1,19 +1,27 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: vpro-ingress
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: "true"
+    nginx.ingress.kubernetes.io/rewrite-target: "/"
+  creationTimestamp: "2025-04-02T19:12:27Z"
+  generation: 1
+  name: vpro-ingress
+  namespace: default
+  resourceVersion: "2670"
+  uid: aacffcb3-16a9-4f14-ad1f-7a28861d37ea
 spec:
   ingressClassName: nginx
   rules:
-  - host: vishy.k8s.local
-    http:
+  - http:
       paths:
-      - path: /
-        pathType: Prefix
-        backend:
+      - backend:
           service:
             name: vproapp-service
             port:
               number: 8080
+        path: /
+        pathType: Prefix
+status:
+  loadBalancer:
+    ingress:
+    - hostname: a314aa300cc4f4d1c9648a0b173998be-00d75a148540a6c0.elb.us-east-1.amazonaws.com
