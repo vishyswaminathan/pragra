@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/vishyswaminathan/pragra.git
     targetRevision: HEAD
-    path: pragra
+    path: kubedefs
   destination:
     server: https://kubernetes.default.svc
     namespace: default
